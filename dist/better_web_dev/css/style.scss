@@ -1,0 +1,84 @@
+$bgcolor: #EDEAE3;
+$primarycolor: #86C543;
+$textcolor: #34302D;
+$shadow: #282828;
+
+@import url(http://fonts.googleapis.com/css?family=Cambo|Open+Sans);
+
+body {
+	font-size: 100%;
+    background-color: $bgcolor;
+    background: url('../img/Computer-Code.jpg') center center fixed; /*** image credit: http://janbrass.org/wp-content/uploads/2012/12/Computer-Code.jpg ***/
+    background-size: cover;
+}
+h1, li, a { color: $textcolor;}
+h1 {
+	font-family: 'Cambo', Helvetica, sans;
+	font-size: 6em;
+    text-shadow: 1px 1px 1px $shadow;
+    margin: 0 auto;
+}
+
+li {
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 3em;
+}
+
+p {
+  padding: 10px 15px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 2.2em;
+    font-weight: 300;
+    color: $bgcolor;
+}
+
+#wrapper {
+	width: 80%;
+	margin: 0 auto;
+    background-color: $primarycolor;
+    box-shadow: 0 0 23px 12px $shadow;
+}
+
+#topic {
+    margin: 25px 10px; 
+}
+
+ol {
+    counter-reset:li; /* Initiate a counter */
+    margin-left:0; /* Remove the default left margin */
+    padding-left:0; /* Remove the default left padding */
+}
+ol > li {
+    position:relative; /* Create a positioning context */
+    margin:0 0 6px 2em; /* Give each list item a left margin to make room for the numbers */
+    padding:4px 8px; /* Add some spacing around the content */
+    list-style:none; /* Disable the normal item numbering */
+    border-top:2px solid #666;
+    background-color: $primarycolor;
+}
+ol > li:before {
+    content:counter(li); /* Use the counter as content */
+    counter-increment:li; /* Increment the counter by 1 */
+    /* Position and style the number */
+    position:absolute;
+    top:-2px;
+    left:-2em;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    width:2em;
+    /* Some space between the number and the content in browsers that support
+       generated content but not positioning it (Camino 2 is one example) */
+    margin-right:8px;
+    padding:4px;
+    border-top:2px solid #666;
+    color:#fff;
+    background:#666;
+    font-weight:400;
+    text-align:center;
+}
+li ol,
+li ul {margin-top:6px;}
+ol ol li:last-child {margin-bottom:0;}
+a { text-decoration: none; 
+}
